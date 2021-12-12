@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gagarin-new
+  labels:
+    app: gagarin
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: gagarin
+  template:
+    metadata:
+      labels:
+        app: gagarin
+    spec:
+      containers:
+      - name: gagarin
+        image: gagarin:latest
+        ports:
+        - containerPort: 5000
+        imagePullPolicy: IfNotPresent
