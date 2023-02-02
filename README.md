@@ -15,6 +15,23 @@ Sample python app contains 2 files
 * api-server.py
 * requirements.txt
 
+#### for trying flask locally
+```shell
+python3 -m venv venv
+source venv/bin/activate  
+pip list
+pip install -r requirements.txt   
+export FLASK_APP=api-server  
+python -m flask run --host=0.0.0.0 --port=80
+deactivate
+```
+
+#### for trying docker locally
+```shell
+docker build -t flasktest .
+docker run -it -p 80:80 flasktest 
+```
+
 ### docker build
 To build image use `Dockerfile` content and run
 ```shell
@@ -40,7 +57,6 @@ for forwarding
 ```shell
 kubectl port-forward service/gagarin 8080:5000
 ```
-
 
 ### script deploy
 
