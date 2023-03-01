@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gagarin-new
+  name: app
   labels:
-    app: gagarin
+    app: sample-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: gagarin
+      app: sample-app
   template:
     metadata:
       labels:
-        app: gagarin
+        app: sample-app
     spec:
       containers:
-      - name: gagarin
-        image: gagarin:latest
+      - name: app
+        image: yaburov/flask-app:2
         ports:
-        - containerPort: 5000
+        - containerPort: 8080
         imagePullPolicy: IfNotPresent
