@@ -26,4 +26,11 @@ kubectl exec app -- date
 kubectl exec -it app -- sh
 kubectl logs app
 kubectl port-forward app 8080:80
+kubectl get pods -o wide 
 ```
+
+-[x] e8 - pods
+-[ ] e9   
+-[ ] e10
+-[ ] e11
+-[ ] e12

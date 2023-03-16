@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: apps
+  name: pod-apps
   labels:
     env: prod
     app: main
