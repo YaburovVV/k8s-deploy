@@ -29,8 +29,8 @@ kubectl port-forward app 8080:80
 kubectl get pods -o wide 
 ```
 
--[x] e8 - pods
--[ ] e9   
--[ ] e10
--[ ] e11
--[ ] e12
+- [x] e8 - pods
+- [ ] e9   
+- [ ] e10
+- [ ] e11
+- [ ] e12
