@@ -1,25 +1,26 @@
 # php app
 Sample php app for try it in k8s
 
-#### for trying locally
+@journey
+
+#### Run the service docker locally
+
+Get images versions
 ```shell
-python3 -m venv venv
-source venv/bin/activate  
-pip list
-pip install -r requirements.txt   
-export FLASK_APP=api-server  
-python -m flask run --host=0.0.0.0 --port=80
-deactivate
+curl -s https://hub.docker.com/v2/repositories/yaburov/httpd-php/tags | jq '{versions: [.results[] | .name ]}'
 ```
 
-#### for trying docker locally
+Build app
 ```shell
-docker build -t php-app .
-docker run -it -p 80:80 flasktest 
+docker build -t yaburov/httpd-php:2 .
+docker images
 ```
-#### build it for GCP
+Push app to hub.docker.com
 ```shell
-docker buildx build -t yaburov/flask-app:1 --platform linux/x86_64 .  
-docker push yaburov/flask-app:1
+docker push yaburov/httpd-php:2
 ```
 
+Run app
+```shell
+docker run -it -h httpd-php.com -p 80:80 yaburov/httpd-php:2 
+```

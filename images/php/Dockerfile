@@ -1,7 +1,4 @@
-FROM amazonlinux
-RUN yum -y update
-RUN yum -y install httpd
-RUN yum -y install php
-COPY ./index.php /var/www/html/index.php
-CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
+FROM php:8.0-apache
+WORKDIR /var/www/html
+COPY index.php index.php
 EXPOSE 80
